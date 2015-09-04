@@ -1,11 +1,11 @@
 #include <iostream>
-using namespace std; // questionable
+using namespace std;
 
 
 int main() {
-    string my_name = "David Blaine";
-    string my_text_editor = "Emacs";
-    string my_home_os = "Windows";
+    string myName = "Mario";
+    string myTextEditor = "Stone tablets";
+    string myOS = "CentOS";
 
     cout << "My name is " << my_name << endl
      << "I was able to install and test g++ and "
