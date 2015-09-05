@@ -1,5 +1,5 @@
 #include <iostream>
-#include "HW1.h"
+#include "hw1.h"
 
 int main(){
     std::cout << '\n' << getCustomString() << '\n';
