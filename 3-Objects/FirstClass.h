@@ -14,8 +14,10 @@ private:
 //    int _size;
 
 public:
+    FirstClass();
     FirstClass(int n);
     int getSize();
+    void setSize(int); // don't need to name variables
 
 };
 
