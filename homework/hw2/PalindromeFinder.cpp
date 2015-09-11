@@ -1,6 +1,8 @@
 #include "PalindromeFinder.h"
+#include <stdlib.h>
 #include <string>
 #include <iostream>
+#include <sstream>
 
 using namespace std;
 
@@ -8,8 +10,10 @@ using namespace std;
 PalindromeFinder::PalindromeFinder(){}
 
 string PalindromeFinder::toString(){
-    return "largest palindrome seen so far is \"" + this->getLargestPalindromeFound() +
-            "\" with size " + to_string(this->getSizeOfLargestPalindromeFound());
+    stringstream ss;
+    ss << "largest palindrome seen so far is \"" << this->getLargestPalindromeFound();
+    ss << "\" with size " << this->getSizeOfLargestPalindromeFound();
+    return ss.str();
 }
 
 string PalindromeFinder::getLargestPalindromeFound(){
@@ -48,4 +52,3 @@ string PalindromeFinder::getLargestPalindrome(string* inputStrings, int numberOf
 void PalindromeFinder::truncateToLargestPalindrome(string& inputString){
     //TODO define truncateToLargestPalindrome with the proper functionality
 }
-

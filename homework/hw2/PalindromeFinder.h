@@ -23,6 +23,4 @@ public:
 };
 
 
-
-
 #endif //CSE250_FALL2015_STRINGWRAPPER_H

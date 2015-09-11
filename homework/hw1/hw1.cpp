@@ -2,6 +2,7 @@
 
 std::string getCustomString(){
     // TODO
+    return "a string";
 }
 
 

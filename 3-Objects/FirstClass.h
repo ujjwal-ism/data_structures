@@ -19,6 +19,7 @@ public:
     int getSize();
     void setSize(int); // don't need to name variables
 
+//    bool operator<(const FirstClass&, const FirstClass&);
 };
 
 #endif //CSE250_FALL2015_FIRSTCLASS_H

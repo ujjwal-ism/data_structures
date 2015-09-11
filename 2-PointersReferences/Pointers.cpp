@@ -23,18 +23,28 @@ int main() {
     int n=4;
     int* numbers = new int[n]; // allocates memory for 4 consecutive ints
     numbers[0] = 1;
-    numbers[1] = 2;
+    numbers[1] = 8;
     numbers[2] = 3;
     numbers[3] = 5;
 
     cout << "numbers: " << numbers << endl;
 
-    for(int i=0; i<n; i++){
-        cout << "numbers[" << i << "]  : " << numbers[i] << endl;
-        cout << "*(numbers+" << i << "): " << *(numbers+i) << endl;
-    }
+//     for(int i=0; i<20; i++){
+//         cout << "numbers[" << i << "]  : " << numbers[i] << endl;
+//         cout << "*(numbers+" << i << "): " << *(numbers+i) << endl;
+//     }
 
-	cout << endl << "numbers[0]  : " << numbers[0] << endl;
+	int f=16;
+	
+	cout << endl << "f  : " << f << endl;
+	cout << endl << "&f  : " << &f << endl;
+	cout << endl << "&&f  : " << &&f << endl;
+// 	cout << endl << "numbers[50]  : " << numbers[50] << endl;// 
+// 	cout << endl << "numbers[50]  : " << numbers[50] << endl;
+// 	numbers[4] = 8845;
+// 	cout << endl << "location  : " << (numbers+4) << endl;
+	
+// 	cout << endl << "f  : " << f << endl;
 
     return 0;
 }

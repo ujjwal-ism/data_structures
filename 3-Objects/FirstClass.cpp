@@ -14,3 +14,7 @@ int FirstClass::getSize() {
 void FirstClass::setSize(int n){
     this->size = n;
 }
+
+//bool operator<(const FirstClass& that, const FirstClass& other){
+//    return (that.size < other.size);
+//}
