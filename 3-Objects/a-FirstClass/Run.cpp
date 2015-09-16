@@ -23,7 +23,7 @@ int main(){
     cout << endl << "size of secondObject is: " << secondObject.getSize() << endl;
     cout << "secondObject location: " << &secondObject << endl;
 
-//    firstTasteOfSTL();
+    firstTasteOfSTL();
 
     return 0;
 }
@@ -39,11 +39,5 @@ void firstTasteOfSTL(){
         cout << objectsVector->at(i)->getSize() << endl;
     }
     cout << endl << endl;
-    sort(objectsVector->begin(), objectsVector->end());
-
-    for(int i=0; i<vectorSize; i++){
-        cout << objectsVector->at(i)->getSize() << endl;
-    }
-    cout << endl;
 
 }

@@ -9,8 +9,10 @@ using namespace std;
 
 class Animal{
 public:
-    virtual string makeNoise() =0;
+    virtual string makeNoise()=0;
 };
+
+
 class Dog : public Animal{
 public:
     string makeNoise(){return "woof";}
