@@ -74,7 +74,7 @@ void operation(){
 
 
 int main(){
-    long n=5;
+    long n=100;
 
     clock_t startTime;
     clock_t endTime;
@@ -122,15 +122,15 @@ int main(){
     elapsedTime = (double(clock() - startTime) / CLOCKS_PER_SEC)*1000.0;
     cout << elapsedTime << "ms cubed\n";
 
-    startTime = clock();
-    exponential(n);
-    elapsedTime = (double(clock() - startTime) / CLOCKS_PER_SEC)*1000.0;
-    cout << elapsedTime << "ms exponential\n";
+//     startTime = clock();
+//     exponential(n);
+//     elapsedTime = (double(clock() - startTime) / CLOCKS_PER_SEC)*1000.0;
+//     cout << elapsedTime << "ms exponential\n";
 
-    startTime = clock();
-    factorial(n);
-    elapsedTime = (double(clock() - startTime) / CLOCKS_PER_SEC)*1000.0;
-    cout << elapsedTime << "ms factorial\n";
+//    startTime  = clock();
+//     factorial(n);
+//     elapsedTime = (double(clock() - startTime) / CLOCKS_PER_SEC)*1000.0;
+//     cout << elapsedTime << "ms factorial\n";
 
     return 0;
 }

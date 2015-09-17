@@ -9,7 +9,7 @@ using namespace std;
 
 class Animal{
 public:
-    virtual string makeNoise()=0;
+    virtual string makeNoise(){return "quack";}
 };
 
 
