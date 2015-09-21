@@ -1,6 +1,6 @@
 #ifndef CSE250_FALL2015_ITERATIONRECURSION_H
 #define CSE250_FALL2015_ITERATIONRECURSION_H
 
-//SHOW fibonacci in many different ways, or better example
+int gcd(int a, int b);
 
 #endif //CSE250_FALL2015_ITERATIONRECURSION_H
