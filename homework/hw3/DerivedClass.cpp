@@ -7,12 +7,36 @@ int DerivedClass::findClosestToZero() {
 }
 
 int DerivedClass::findClosestToZero(int n) {
-    int distance = std::max(this->values[n], -this->values[n]);
-    int closestDistance;
-    if(distance < this->findClosestToZero(n)){
-        closestDistance = distance;
-    }else{
-        closestDistance = this->findClosestToZero(n);
+    if(n<0){
+        return INT_MAX;
     }
-    return closestDistance;
+    return std::min(std::abs(this->values[n]), this->findClosestToZero(n-1));
 }
+
+
+int DerivedClass::getSum(){
+    int sum=0;
+    for(int i=0; i<this->numberOfValues; i++){
+        sum += values[i];
+    }
+    return sum;
+}
+
+
+int DerivedClass::getMultiplication(){
+    int mult=1;
+    for(int i=0; i<this->numberOfValues; i++){
+        mult *= values[i];
+    }
+    return mult;
+}
+
+
+int DerivedClass::evaluateAsPolynomial(int x){
+    int eval=0;
+    for(int i=this->numberOfValues-1; i>=0; i--){
+        eval = (x*eval) + this->values[i];
+    }
+    return eval;
+}
+

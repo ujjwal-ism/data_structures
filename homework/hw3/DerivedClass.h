@@ -14,6 +14,11 @@ public:
 
     int findClosestToZero();
     int findClosestToZero(int);
+
+    virtual int getSum();
+    virtual int getMultiplication();
+    virtual int evaluateAsPolynomial(int);
+
 };
 
 
