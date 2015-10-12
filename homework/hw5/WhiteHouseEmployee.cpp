@@ -77,7 +77,7 @@ int main(int argc, char *argv[])
    {
       outputFile << *(employeeVector[i]);
    }
-
+   outputFile.close();
 
    vector <vector<Employee *> *>  sortedByDataFieldVector;
 
