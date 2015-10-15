@@ -1,7 +1,8 @@
 #include "Employee.h"
 
-// Debug this function
-// You may need to fix multiple lines
+// TODO: Part 1. Debug the following constructor that takes a line
+//       in the format similar to "2014.cvs" and populates an Employee object
+//       You may need to fix multiple lines
 Employee::Employee(std::string lineFromFile)
 {
 	std::string tempString = lineFromFile;

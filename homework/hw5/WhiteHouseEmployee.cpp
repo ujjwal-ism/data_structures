@@ -67,7 +67,7 @@ int main(int argc, char *argv[])
       employeeVector.push_back(pEmployee);
    }
 
-   // TODO: Perform the sorting based on the criteria passed
+   // TODO: Part 2. Perform the sorting based on the criteria passed
    // Add functionality to Employee.h or Filter.h file (outside the class declaration).
 
 
@@ -84,7 +84,7 @@ int main(int argc, char *argv[])
    for (int i = NAME; i <= POSITION; i++)
    {
       vector <Employee *> *pEmployeeVector = new vector <Employee *>(employeeVector.begin(), employeeVector.end());
-      // TODO: Sort by each field and then store
+      // TODO: Part 2. Sort by each field and then store
       sortedByDataFieldVector.push_back(pEmployeeVector);
    }
 
