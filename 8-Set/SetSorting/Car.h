@@ -17,7 +17,11 @@ private:
 
 public:
 
+    Car();
     Car(string, string, double, int);
+    Car(const Car& otherCar);
+    Car& operator=(const Car& otherCar);
+    ~Car();
 
     string getMake() const;
     string getModel() const;
@@ -28,6 +32,7 @@ public:
 
 };
 
+bool operator<(const Car& c1, const Car& c2);
 
 ostream& operator<<(ostream &stream, const Car &car);
 

@@ -1,39 +1,14 @@
-
-#include <iostream>
-#include <set>
-#include <ctime>
-#include <cstdlib>
-#include <vector>
-#include <algorithm>
+#include "SetExample.h"
 
 using namespace std;
 
-int getRandomInt();
-vector<int>* getRandomVector(int n);
-set<int>* getRandomSet(int n);
-vector<int>* vectorUnionLive(vector<int>*, vector<int>*);
-vector<int>* vectorUnion(vector<int>*, vector<int>*);
-vector<int>* vectorUnionAlt(vector<int>*, vector<int>*);
-set<int>* setUnion(set<int>*, set<int>*);
-vector<int>* vectorIntersection(vector<int>*, vector<int>*);
-set<int>* setIntersection(set<int>*, set<int>*);
-void setExample();
-void printVector(vector<int>* vectorOfIntegers);
-void printSet(set<int>* setOfIntegers);
-void unionExample(vector<int>* vectorOfIntegers1, vector<int>* vectorOfIntegers2,
-                  set<int>* setOfIntegers1, set<int>* setOfIntegers2);
-void intersectionExample(vector<int>* vectorOfIntegers1, vector<int>* vectorOfIntegers2,
-                         set<int>* setOfIntegers1, set<int>* setOfIntegers2);
-void printData(vector<int>* vectorOfIntegers1, vector<int>* vectorOfIntegers2,
-               set<int>* setOfIntegers1, set<int>* setOfIntegers2);
 
-int maxValue = 100000;
 
-int getRandomInt(){
+int getRandomInt(int maxValue){
     return rand()%maxValue;
 }
 
-vector<int>* getRandomVector(int n){
+vector<int>* getRandomVector(int n, int maxValue){
 //    vector<int>* vectorOfIntegers = new vector<int>(n);
 //    for(vector<int>::const_iterator it = vectorOfIntegers->begin(); it != vectorOfIntegers->end(); it++){
 //        vectorOfIntegers->insert(it,getRandomInt());
@@ -41,15 +16,15 @@ vector<int>* getRandomVector(int n){
 
     vector<int>* vectorOfIntegers = new vector<int>;
     for(int i=0; i<n; i++){
-        vectorOfIntegers->push_back(getRandomInt());
+        vectorOfIntegers->push_back(getRandomInt(maxValue));
     }
     return vectorOfIntegers;
 }
 
-set<int>* getRandomSet(int n){
+set<int>* getRandomSet(int n, int maxValue){
     set<int>* setOfIntegers = new set<int>;
     for(int i=0; i<n; i++){
-        setOfIntegers->insert(getRandomInt());
+        setOfIntegers->insert(getRandomInt(maxValue));
     }
     return setOfIntegers;
 }
@@ -241,47 +216,3 @@ void printData(vector<int>* vectorOfIntegers1, vector<int>* vectorOfIntegers2,
 
 
 
-
-int main(){
-
-    clock_t startTime;
-    clock_t endTime;
-    double elapsedTime;
-
-    maxValue = 10000000; // bad practice!
-    int n=500000;
-
-    cout << n << " elements per set with max value of " << maxValue << endl;
-
-    vector<int>* vectorOfIntegers1 = getRandomVector(n);
-    vector<int>* vectorOfIntegers2 = getRandomVector(n);
-
-    set<int>* setOfIntegers1 = new set<int>;
-    setOfIntegers1->insert(vectorOfIntegers1->begin(),
-                          vectorOfIntegers1->end() );
-    set<int>* setOfIntegers2 = new set<int>;
-    setOfIntegers2->insert(vectorOfIntegers2->begin(),
-                          vectorOfIntegers2->end() );
-
-    //printData(vectorOfIntegers1, vectorOfIntegers2,
-              //setOfIntegers1, setOfIntegers2);
-
-    cout << endl;
-
-    //unionExample(vectorOfIntegers1, vectorOfIntegers2,
-                // setOfIntegers1, setOfIntegers2);
-
-    cout << endl;
-
-    intersectionExample(vectorOfIntegers1, vectorOfIntegers2,
-                        setOfIntegers1, setOfIntegers2);
-
-    cout << endl;
-
-    delete vectorOfIntegers1;
-    delete setOfIntegers1;
-    delete vectorOfIntegers2;
-    delete setOfIntegers2;
-
-    return 0;
-}

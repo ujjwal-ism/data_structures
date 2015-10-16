@@ -1,17 +1,19 @@
 
 #include <iostream>
-#include <String>
+#include <string>
 #include <set>
 #include <vector>
 #include <algorithm>
 
 #include "Car.h"
 #include "CarSorters.h"
+#include "../SetExample.h"
 
 using namespace std;
 
-template <typename T> void printSet(T const& cars){
-//    cout << T << endl;
+template <typename T> void printDataStructure(T const &cars){
+//    cout << typeid(T).name() << endl;
+    cout << __PRETTY_FUNCTION__ << endl;
     for(typename T::const_iterator it = cars.begin();
         it != cars.end();
         it++){
@@ -39,42 +41,73 @@ int main(){
     carsVec.push_back(Car("Volkswagen", "Sambabus", 1095, 34));
 
 
-    printSet<vector<Car> >(carsVec);
-    sort(carsVec.begin(), carsVec.end(), compareHP);
-    printSet<vector<Car> >(carsVec);
+    printDataStructure<vector<Car> /* need an extra space here to avoid compile error with >> */ >(carsVec);
 
+    // sort vector with a custom function
+    sort(carsVec.begin(), carsVec.end(), compareHP);
+    printDataStructure<vector<Car> >(carsVec);
+
+    // sort using operator<
+    set<Car> carsByDefault;
+    carsByDefault.insert(carsVec.begin(), carsVec.end());
+    printDataStructure<set<Car> >(carsByDefault);
+
+
+    // sort a set using different functors
     set<Car, compareMakeAndModelFunctor> carsByMakeAndModel;
     carsByMakeAndModel.insert(carsVec.begin(), carsVec.end());
-    printSet<set<Car, compareMakeAndModelFunctor> >(carsByMakeAndModel);
+    printDataStructure<set<Car, compareMakeAndModelFunctor> >(carsByMakeAndModel);
 
     set<Car, compareWeightFunctor> carsByWeight;
     carsByWeight.insert(carsVec.begin(), carsVec.end());
-    printSet<set<Car, compareWeightFunctor> >(carsByWeight);
+    printDataStructure<set<Car, compareWeightFunctor> >(carsByWeight);
 
     set<Car, compareHPFunctor> carsByHP;
     carsByHP.insert(carsVec.begin(), carsVec.end());
-    printSet<set<Car, compareHPFunctor> >(carsByHP);
+    printDataStructure<set<Car, compareHPFunctor> >(carsByHP);
 
-
+    // sort by a derived value
     set<Car, comparePowerToWeightFunctor> carsByPowerToWeightRatio;
     carsByPowerToWeightRatio.insert(carsVec.begin(), carsVec.end());
-    printSet<set<Car, comparePowerToWeightFunctor> >(carsByPowerToWeightRatio);
+    printDataStructure<set<Car, comparePowerToWeightFunctor> >(carsByPowerToWeightRatio);
 
 
+    // duplicates are removed based on functor
+    // sorting by make allows only 1 car per make
     set<Car, compareMakeFunctor> carsByMake;
     carsByMake.insert(carsVec.begin(), carsVec.end());
-    printSet<set<Car, compareMakeFunctor> >(carsByMake);
+    printDataStructure<set<Car, compareMakeFunctor> >(carsByMake);
 
+
+    // use a multiset if you want to keep duplicates
     multiset<Car, compareMakeFunctor> carsByMakeMultiset;
     carsByMakeMultiset.insert(carsVec.begin(), carsVec.end());
-    printSet<multiset<Car, compareMakeFunctor> >(carsByMakeMultiset);
+    printDataStructure<multiset<Car, compareMakeFunctor> >(carsByMakeMultiset);
 
 
-    //query
+    // Can execute queries on ranges. Use functions like upper_bound and lower_bound
+    //  since find(value) returns end() if the value is not found
     set<Car, compareMakeAndModelFunctor> carsSubset;
     carsSubset.insert(carsByHP.upper_bound(Car("","",0,200)), carsByHP.upper_bound(Car("","",0,300)));
-    printSet<set<Car, compareMakeAndModelFunctor> >(carsSubset);
+    printDataStructure<set<Car, compareMakeAndModelFunctor> >(carsSubset);
 
+    set<Car, compareMakeAndModelFunctor> carsSubset2;
+    carsSubset2.insert(carsByMakeAndModel.upper_bound(Car("T","",0,200)), carsByMakeAndModel.end());
+    printDataStructure<set<Car, compareMakeAndModelFunctor> >(carsSubset2);
+
+    // set union
+    set<Car> carsSubset3;
+    carsSubset3.insert(carsSubset.begin(), carsSubset.end());
+    carsSubset3.insert(carsSubset2.begin(), carsSubset2.end());
+    printDataStructure<set<Car> >(carsSubset3);
+
+    // set intersection
+    //  to use set_intersection with vector: initialize to proper size, write default constructor for Car
+    vector<Car> carsSubset4(carsSubset.size() + carsSubset2.size() - carsSubset3.size());
+     set_intersection(carsSubset.begin(), carsSubset.end(),
+                      carsSubset2.begin(), carsSubset2.end(),
+                      carsSubset4.begin());
+    printDataStructure<vector<Car> >(carsSubset4);
 
     return 0;
 }
