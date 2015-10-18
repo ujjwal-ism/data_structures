@@ -68,10 +68,12 @@ int main(int argc, char *argv[])
    }
 
    // TODO: Part 2. Perform the sorting based on the criteria passed
-   // Add functionality to Employee.h or Filter.h file (outside the class declaration).
+   // Add functionality to Employee.h. 
+   // i.e., write code for operator()
+   CompareClass compareClass(sortedBy, isAscending);
+   std::sort(employeeVector.begin(), employeeVector.end(), compareClass);
+ 
 
-
-  
    outputFile << getEmployeeFileHeader();
    for (size_t i = 0; i < employeeVector.size(); i++)
    {
