@@ -87,6 +87,8 @@ int main(int argc, char *argv[])
    {
       vector <Employee *> *pEmployeeVector = new vector <Employee *>(employeeVector.begin(), employeeVector.end());
       // TODO: Part 2. Sort by each field and then store
+      CompareClass compareClass(static_cast<DATA_FIELDS>(i));
+      std::sort(pEmployeeVector->begin(), pEmployeeVector->end(), compareClass);
       sortedByDataFieldVector.push_back(pEmployeeVector);
    }
 
