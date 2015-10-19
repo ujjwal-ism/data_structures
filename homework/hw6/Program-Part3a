@@ -1,0 +1,13 @@
+Integer n=15
+Integer count = 0
+for(Integer i=0; i<15; i=i+1){
+   Integer x=12
+   Integer result = x*i
+   if(result>50){
+       count = count+1
+   }else{
+       count = count -1
+   }
+}
+
+return count

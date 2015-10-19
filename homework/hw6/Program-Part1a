@@ -1,0 +1,4 @@
+Integer x = 5
+Integer y = 7
+Integer z = 2*y+x*(8+3)-y
+return z

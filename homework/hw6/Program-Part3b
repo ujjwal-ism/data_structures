@@ -1,0 +1,23 @@
+
+Integer n=15
+Integer count = 0
+
+for(Integer i=0; i<15; i=i+1){
+   Integer x=12
+   Integer result = x*i
+   if(result>50){
+       count = count+10
+       break
+   }else{
+       count = count+1
+   }
+}
+
+for(Double x=0.0; x< 5.6; x=x+1.1{
+    if(x<3.0){
+        continue
+    }
+    count = count -30
+}
+
+return count

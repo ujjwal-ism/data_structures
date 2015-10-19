@@ -25,6 +25,7 @@ public:
 
     string getMake() const;
     string getModel() const;
+    string getMakeAndModel() const;
     double getWeight() const;
     int getHP() const;
     double powerToWeightRatio() const;
