@@ -29,6 +29,10 @@ string Car::getModel() const{
     return model;
 }
 
+string Car::getMakeAndModel() const{
+    return make + " " + model;
+}
+
 double Car::getWeight() const{
     return weight;
 }
@@ -38,7 +42,7 @@ int Car::getHP() const{
 }
 
 double Car::powerToWeightRatio() const{
-    return hp/weight;
+    return weight/hp;
 }
 
 bool operator<(const Car& car1, const Car& car2){
