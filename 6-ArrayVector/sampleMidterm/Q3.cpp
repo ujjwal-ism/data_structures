@@ -13,18 +13,28 @@ void Q3Run(){
     vectorOfInts.insert(vectorOfInts.begin(), -10);
     reverse(vectorOfInts.begin(), vectorOfInts.end());
 
-    printVector(vectorOfInts);
+//    printVector(vectorOfInts);
 
     vector<int> otherInts;
     otherInts.push_back(300);
     otherInts.push_back(50);
     otherInts.push_back(-60);
     otherInts.push_back(0);
+
+//    printVector(vectorOfInts);
+
     vectorOfInts.insert(vectorOfInts.end()-5, otherInts.begin(), otherInts.end());
+
+//    printVector(vectorOfInts);
+
     sort(vectorOfInts.begin(), vectorOfInts.end());
     swap(vectorOfInts[1], vectorOfInts[10]);
     swap(vectorOfInts[7], vectorOfInts[4]);
     swap(vectorOfInts[12], vectorOfInts[4]);
+
+
+    printVector(vectorOfInts);
+
     vectorOfInts.erase(vectorOfInts.begin()+2, vectorOfInts.begin()+10);
 
     printVector(vectorOfInts);
@@ -40,7 +50,7 @@ void Q3Run(){
     vectorOfInts.insert(vectorOfInts.begin()+4, numbers, numbers+2);
 
 
-   printVector(vectorOfInts);
+//   printVector(vectorOfInts);
 
 }
 

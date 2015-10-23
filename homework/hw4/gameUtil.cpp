@@ -12,7 +12,7 @@ int GameUtil::compute(Square* square, Player* player){
   double cannonPowder = square->getCannonPowder();
 
   double teleporterCompute = 0;
-  for(double i = 0.0; i < chi; i=i+1.0){
+  for(double i = 0.0; i < chi;){
     teleporterCompute += sqrt(2.0 * ++i * teleporterEnergy);
   }
   teleporterCompute *= 1.0/(1.0 + chi);

@@ -1,0 +1,9 @@
+
+Integer number = 5
+Boolean greaterThanFive = number > 5
+if(greaterThanFive){
+    return number
+} else{
+    Integer six = 6
+    return six
+}

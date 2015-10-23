@@ -47,11 +47,11 @@ vector<int> merge(vector<int>& left, vector<int>& right){
         temp.push_back(right[rightPointer++]);
     }
 
-    left.clear();
-    left.insert(left.begin(), temp.begin(), temp.begin()+leftPointer);
-
-    right.clear();
-    right.insert(right.begin(), temp.begin()+leftPointer, temp.end());
+//     left.clear();
+//     left.insert(left.begin(), temp.begin(), temp.begin()+leftPointer);
+// 
+//     right.clear();
+//     right.insert(right.begin(), temp.begin()+leftPointer, temp.end());
 
     return temp;
 }

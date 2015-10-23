@@ -5,9 +5,9 @@ using namespace std;
 
 int main(){
 
-    checkCapacity();
+//     checkCapacity();
 //    checkWithInitialCapacity();
-//    movingStrings();
+   movingStrings();
 
     return 0;
 }

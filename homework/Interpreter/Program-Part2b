@@ -1,0 +1,25 @@
+
+
+Integer number = 5
+Integer zero = 0
+
+Double epsilon = 0.00001
+Double value = 10.5
+Double divisor = 2.0
+Double result = value/divisor
+Double compare = 5.25
+Double difference = result-compare
+Double reverseDifference = compare-result
+if(difference > reverseDifference){}
+else{difference = reverseDifference}
+
+if(difference < epsilon){
+    if(number > zero){
+        if(epsilon > 3.5){
+            return value
+        }else{
+            return number
+        }
+    }
+}
+return zero

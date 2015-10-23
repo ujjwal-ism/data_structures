@@ -15,6 +15,7 @@ void checkCapacity(){
     printVector(strings);
 }
 
+
 void checkWithInitialCapacity(){
 
     vector<string> withInitialCapacity(100);
@@ -26,7 +27,7 @@ void checkWithInitialCapacity(){
             printSizeCapacity(withInitialCapacity);
         }
     }
-//    withInitialCapacity[30] = "where am I?";
+   withInitialCapacity[30] = "where am I?";
     printVector(withInitialCapacity);
 
 }
@@ -50,11 +51,11 @@ void movingStrings(){
     strings.push_back("given");
     strings.push_back("someone");
 
-//    printVector(strings);
+   printVector(strings);
 
     reverse(strings.begin(), strings.end());
 
-//    printVector(strings);
+   printVector(strings);
 
     vector<string> moreStrings;
     moreStrings.push_back("on");
@@ -63,25 +64,25 @@ void movingStrings(){
     moreStrings.push_back("don't");
     moreStrings.push_back("yours");
 
-//    printVector(moreStrings);
+   printVector(moreStrings);
 
     sort(moreStrings.begin(), moreStrings.end());
 
-//    printVector(moreStrings);
+   printVector(moreStrings);
 
     strings.insert(strings.end(), moreStrings.begin(), moreStrings.end());
-
-//    printVector(strings);
+cout << "!";
+   printVector(strings);
 
     strings.erase(strings.begin()+2);
 
-//    printVector(strings);
+   printVector(strings);
 
     swap(strings[0], strings[5]);
     swap(strings[1], strings[6]);
     swap(strings[2], strings[5]);
 
-//    printVector(strings);
+   printVector(strings);
 
     strings.insert(strings.begin()+3, "who");
     swap(strings[4], strings[7]);
@@ -90,19 +91,19 @@ void movingStrings(){
     swap(strings[7], strings[9]);
     swap(*(strings.end()-2), *(strings.end()-3));
 
-//    printVector(strings);
+   printVector(strings);
 
     strings.insert(strings.begin()+4, "has");
     strings.insert(strings.begin()+6, "up");
 
-//    printVector(strings);
+   printVector(strings);
 
     string words[2];
     words[1] = "dreams";
     words[0] = "their";
     strings.insert(strings.begin()+8, words, words+2);
 
-//    printVector(strings);
+   printVector(strings);
 
     strings.insert(strings.end()-3, "of");
     strings.insert(strings.end()-5, "you");
@@ -114,7 +115,7 @@ void movingStrings(){
     strings.push_back(u);
 
 
-//    printVector(strings);
+   printVector(strings);
 
 }
 

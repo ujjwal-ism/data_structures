@@ -6,10 +6,7 @@
 #include <iomanip>
 #include <algorithm>
 
-enum DATA_FIELDS
-{
-	NAME, STATUS, SALARY, PAY_BASIS, POSITION
-};
+
 
 class Employee{
 	public:
@@ -34,6 +31,7 @@ public:
    CompareClass(DATA_FIELDS dataField, bool isAscending=true) : dataField_(dataField), isAscending_(isAscending){}
    // TODO: Part2: implement the overloaded () operator. 
    bool operator() (Employee *pX, Employee *pY) {
+
       return true;
    }
 private:
@@ -44,4 +42,11 @@ private:
 std::ostream& operator<<(std::ostream &strm, const Employee &emp);
 
 std::string getEmployeeFileHeader();
+
+enum DATA_FIELDS
+{
+	NAME, STATUS, SALARY, PAY_BASIS, POSITION
+};
+
+
 #endif
