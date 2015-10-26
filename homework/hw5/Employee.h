@@ -6,7 +6,10 @@
 #include <iomanip>
 #include <algorithm>
 
-
+enum DATA_FIELDS
+{
+	NAME, STATUS, SALARY, PAY_BASIS, POSITION
+};
 
 class Employee{
 	public:
@@ -43,10 +46,7 @@ std::ostream& operator<<(std::ostream &strm, const Employee &emp);
 
 std::string getEmployeeFileHeader();
 
-enum DATA_FIELDS
-{
-	NAME, STATUS, SALARY, PAY_BASIS, POSITION
-};
+
 
 
 #endif
