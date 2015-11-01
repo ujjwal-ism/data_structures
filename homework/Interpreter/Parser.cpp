@@ -25,9 +25,8 @@ void updateFirst(const string& input, const string& toFind, int& minPos, string&
 }
 
 string getNextSymbol(string& line){
-//    keywords: return,if,else,for,Integer,Double,break,continue
-//    symbols: +,-,*,/,(,),{,},=,<,>,;,,
-//    implied: ==,<=,>=
+//    keywords: return,if,else,var,function,document.write
+//    symbols: +,-,*,/,(,),{,},=,<,>,,,;
 
     while(line.size() != 0 && isspace(line.at(0))){
         line.erase(0,1);
@@ -44,11 +43,9 @@ string getNextSymbol(string& line){
     keywordsAndSymbols.push_back("return");
     keywordsAndSymbols.push_back("if");
     keywordsAndSymbols.push_back("else");
-    keywordsAndSymbols.push_back("for");
-    keywordsAndSymbols.push_back("Integer");
-    keywordsAndSymbols.push_back("Double");
-    keywordsAndSymbols.push_back("break");
-    keywordsAndSymbols.push_back("continue");
+    keywordsAndSymbols.push_back("var");
+    keywordsAndSymbols.push_back("function");
+    keywordsAndSymbols.push_back("document.write");
     keywordsAndSymbols.push_back("+");
     keywordsAndSymbols.push_back("-");
     keywordsAndSymbols.push_back("*");
@@ -81,8 +78,7 @@ string getNextSymbol(string& line){
 
 // Returns -1 if input is the empty string
 // Returns 0 if input is not a number
-// Returns 1 if input is a well-formed integer
-// Returns 2 if input is a well-formed double
+// Returns 1 if input is a well-formed number
 int isNumber(const string& input){
     if(input.size() == 0){
         return -1;
@@ -103,6 +99,38 @@ int isNumber(const string& input){
         }
     }
 
-    return foundDecimal ? 2 : 1;
+    return 1;
 
+}
+
+
+LINE_TYPE getLineType(string& line){
+
+    string lineCopy = line;
+    string firstSymbol = getNextSymbol(lineCopy);
+
+    if(firstSymbol == ""){
+        return BLANK_LINE;
+    }else if(firstSymbol == "var") {
+        return DEFINE_VAR;
+    }else if(firstSymbol == "document.write"){
+        return DOC_WRITE;
+    }else if(firstSymbol == "function"){
+    return FUNCTION_DEF;
+    }else if(firstSymbol == "return"){
+        return RETURN;
+    }else if(firstSymbol == "if"){
+        return IF;
+    }else if(firstSymbol == "}") {
+        string secondSymbol = getNextSymbol(lineCopy);
+        if (secondSymbol == "") {
+            return END_BLOCK;
+        } else if (secondSymbol == "else") {
+            return getNextSymbol(lineCopy) == "if" ? ELSE_IF : ELSE;
+        }else{
+            return END_BLOCK; // should never hit this
+        }
+    }else{
+        return USER_DEFINED;
+    }
 }

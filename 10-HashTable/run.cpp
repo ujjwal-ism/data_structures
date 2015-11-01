@@ -62,11 +62,11 @@ int main(){
     startTime = clock();
 
 
-    int n=150000;
-    HashTable* hashTable = new BinarySearchVector();
-//    HashTable* hashTable = new BinarySearchTree();
-//    HashTable* hashTable = new CSEHashTable(n, modHash);
-//    HashTable* hashTable = new FancyCSEHashTable(n, stdHash);
+    int n=5000;
+    // HashTable* hashTable = new BinarySearchVector();
+   // HashTable* hashTable = new BinarySearchTree();
+   HashTable* hashTable = new CSEHashTable(n, stdHash);
+   // HashTable* hashTable = new FancyCSEHashTable(n, stdHash);
 
 
     insertAllWords(hashTable, dictionary);

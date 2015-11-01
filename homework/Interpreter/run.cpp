@@ -30,6 +30,7 @@ int main(int argc, char *argv[]){
 
     while (getline(inputFile, lineFromFile))
     {
+        cout << getLineType(lineFromFile) << endl; // this is just to show usage
         // Use your interpreter to execute each line
     }
 

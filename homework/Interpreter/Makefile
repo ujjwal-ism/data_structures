@@ -1,4 +1,4 @@
 all:
-	g++ Double.cpp Integer.cpp Interpreter.cpp Parser.cpp run.cpp Variable.cpp
+	g++ Interpreter.cpp Parser.cpp run.cpp UserFunction.cpp
 clean:
 	rm -f *.out *.exe

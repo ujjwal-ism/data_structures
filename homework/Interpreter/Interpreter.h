@@ -5,8 +5,9 @@
 #include <string>
 #include <vector>
 #include <map>
+#include <fstream>
 
-#include "Variable.h"
+#include "UserFunction.h"
 
 using namespace std;
 
@@ -14,10 +15,17 @@ class Interpreter {
 
 private:
     // suggestions:
-    // map<string, Variable> variableMap; // a map of variable names to Variable values
-    // stack to remember scope of variables and nesting of loop and if blocks
+    map<string, double> variableMap; // a map of variable names to Variable values
+    map<string, UserFunction> functionMap; // a map of user defined functions
+    // stack to remember nesting of if blocks
 
 public:
+
+    void interpretScript(ifstream, ofstream);
+
+    // suggestions:
+    double computeInfix(string); // separate function for computing infix notation
+    // Other helper functions
 
 };
 

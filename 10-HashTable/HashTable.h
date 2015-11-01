@@ -14,7 +14,7 @@ using namespace std;
 
 
 
-int modHash(string input, int n){
+int modHash(string input, int m){
 
     int hashValue = 0;
 
@@ -24,13 +24,13 @@ int modHash(string input, int n){
     }
 
     hashValue = hashValue < 0 ? -hashValue : hashValue;
-    return hashValue % n;
+    return hashValue % m;
 }
 
 
 
 
-int sumHash(string input, int n){
+int sumHash(string input, int m){
 
     int hashValue = 0;
 
@@ -39,13 +39,13 @@ int sumHash(string input, int n){
     }
 
     hashValue = hashValue < 0 ? -hashValue : hashValue;
-    return hashValue % n;
+    return hashValue % m;
 }
 
 
 
 
-int xorHash(string input, int n){
+int xorHash(string input, int m){
 
     int hashValue = 0;
 
@@ -55,19 +55,19 @@ int xorHash(string input, int n){
     }
 
     hashValue = hashValue < 0 ? -hashValue : hashValue;
-    return hashValue % n;
+    return hashValue % m;
 }
 
 
 
 
-int stdHash(string input, int n){
+int stdHash(string input, int m){
 
-    hash<string> hasher;
-    int hashValue = hasher(input);
+    hash<string> hashFunction;
+    int hashValue = hashFunction(input);
 
     hashValue = hashValue < 0 ? -hashValue : hashValue;
-    return hashValue % n;
+    return hashValue % m;
 }
 
 
@@ -76,7 +76,6 @@ class HashTable {
 public:
     virtual void insert(string) =0;
     virtual bool find(string) =0;
-
 };
 
 
@@ -153,7 +152,7 @@ public:
     };
 
     bool find(string toFind){
-        vector<string> thisBin = table.at(hashFunction(toFind, numberOfBins));
+        vector<string>& thisBin = table.at(hashFunction(toFind, numberOfBins));
 
         int binSize = thisBin.size();
         for (int i = 0; i < binSize; i++) {
