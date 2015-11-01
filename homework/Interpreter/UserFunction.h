@@ -1,6 +1,9 @@
 #ifndef CSE250_FALL2015_USERFUNCTION_H
 #define CSE250_FALL2015_USERFUNCTION_H
 
+#include <vector>
+
+using namespace std;
 
 // This class is not required, but might be helpful in writing your interpreter
 class UserFunction {

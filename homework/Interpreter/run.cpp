@@ -11,31 +11,24 @@ int main(int argc, char *argv[]){
 
     ifstream inputFile;
     inputFile.open(argv[1]);
-    ofstream outputFile;
-    outputFile.open(argv[2]);
-
     if (!inputFile.is_open())
     {
         cout << "Could not open the input file \n";
         exit(0);
     }
 
+    ofstream outputFile;
+    outputFile.open(argv[2]);
     if (!outputFile.is_open())
     {
         cout << "Could not open the output file \n";
         exit(0);
     }
 
-    string lineFromFile;
 
-    while (getline(inputFile, lineFromFile))
-    {
-        cout << getLineType(lineFromFile) << endl; // this is just to show usage
-        // Use your interpreter to execute each line
-    }
+    Interpreter interpreter;
+    interpreter.interpretScript(inputFile, outputFile);
 
-    // write the result from the return statement of the program into the output file
-    outputFile << "<return value after running your interpreter>";
 
 //    sampleUsage();
 

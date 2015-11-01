@@ -1,1 +1,1 @@
-<return value after running your interpreter>
+output of the document.write lines

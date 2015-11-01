@@ -8,6 +8,7 @@
 #include <fstream>
 
 #include "UserFunction.h"
+#include "Parser.h"
 
 using namespace std;
 
@@ -21,7 +22,7 @@ private:
 
 public:
 
-    void interpretScript(ifstream, ofstream);
+    void interpretScript(ifstream&, ofstream&);
 
     // suggestions:
     double computeInfix(string); // separate function for computing infix notation

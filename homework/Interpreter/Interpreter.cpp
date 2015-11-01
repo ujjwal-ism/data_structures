@@ -2,7 +2,9 @@
 
 
 
-void interpretScript(ifstream inputFile, ofstream outputFile){
+void Interpreter::interpretScript(ifstream& inputFile, ofstream& outputFile){
+
+    string lineFromFile;
 
     while (getline(inputFile, lineFromFile))
     {
