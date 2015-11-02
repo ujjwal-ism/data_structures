@@ -16,3 +16,4 @@ void Interpreter::interpretScript(ifstream& inputFile, ofstream& outputFile){
     outputFile << "output of the document.write lines";
 
 }
+

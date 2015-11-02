@@ -51,7 +51,7 @@ void sampleUsage(){
     }
     cout << tokens.size() << endl << endl;
 
-    string line = "Integer variableName =2+15 *62 - anotherVariableName*10";
+    string line = "var variableName =2+15 *62 - anotherVariableName*10";
 
     vector<string> splitLine = tokenize(line, "=");
     if(splitLine.size() > 2 || splitLine.size() < 1){
