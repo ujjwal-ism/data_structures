@@ -30,7 +30,7 @@ int main(int argc, char *argv[]){
     interpreter.interpretScript(inputFile, outputFile);
 
 
-//    sampleUsage();
+    sampleUsage();
 
     return 0;
 }
@@ -51,7 +51,7 @@ void sampleUsage(){
     }
     cout << tokens.size() << endl << endl;
 
-    string line = "var variableName =2+15 *62 - anotherVariableName*10";
+    string line = "var aVariableName =2+15 *(62 - anotherVariableName)*10";
 
     vector<string> splitLine = tokenize(line, "=");
     if(splitLine.size() > 2 || splitLine.size() < 1){
@@ -60,10 +60,37 @@ void sampleUsage(){
         // line with an assignment
         string lhs = splitLine.at(0);
         string rhs = splitLine.at(1);
+        cout << "left hand side: " << endl;
+        while(lhs.size() != 0){
+            cout << getNextSymbol(lhs) << endl;
+        }
+        cout << endl << "right hand side: " << endl;
         while(rhs.size() != 0){
             cout << getNextSymbol(rhs) << endl;
         }
     }else{
         // line without an assignment
     }
+
+
+    cout << endl;
+    cout << "expected 1: " << isdigit('5') << endl;
+    cout << "expected 1: " << isNumber("5") << endl;
+    cout << "expected 1: " << isNumber("50.11") << endl;
+    cout << "expected 1: " << isNumber(".000554325") << endl;
+    cout << "expected 1: " << isNumber("53241.") << endl;
+    cout << "expected 1: " << isNumber("53241.") << endl;
+    cout << "expected -1: " << isNumber("") << endl;
+    cout << "expected 0: " << isNumber("alphabet") << endl;
+    cout << "expected 0: " << isNumber("these are words") << endl;
+    cout << "expected 0: " << isNumber("5134589723452345a") << endl;
+    cout << "expected 0: " << isNumber("a5134589723452345") << endl;
+    cout << "expected 0: " << isNumber("5134589a723452345") << endl;
+    cout << "expected 1: " << isNumber("5134589723452345") << endl;
+    cout << "expected 0: " << isNumber("5134589723452345..") << endl;
+    cout << "expected 0: " << isNumber("..5134589723452345") << endl;
+    cout << "expected 0: " << isNumber("513.458972345.2345") << endl;
+    cout << "expected 0: " << isNumber("513.4589723452345.") << endl;
+    cout << "expected 0: " << isNumber(".513458972345.2345") << endl;
+
 }

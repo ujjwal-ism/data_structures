@@ -85,7 +85,7 @@ int isNumber(const string& input){
     }
     bool foundDecimal = false;
     for(int i=0; i<input.size(); i++){
-        if(!isnumber(input.at(i))){
+        if(!isdigit(input.at(i))){
             if(input.at(i) == '.'){
                 if(foundDecimal){
                     return 0;

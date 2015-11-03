@@ -2,6 +2,7 @@
 #define CSE250_FALL2015_USERFUNCTION_H
 
 #include <vector>
+#include <string>
 
 using namespace std;
 
