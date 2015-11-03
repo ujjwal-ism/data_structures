@@ -59,6 +59,7 @@ string getNextSymbol(string& line){
     keywordsAndSymbols.push_back(">");
     keywordsAndSymbols.push_back(";");
     keywordsAndSymbols.push_back(",");
+    keywordsAndSymbols.push_back("\"");
 
     for(int i=0; i<keywordsAndSymbols.size(); i++){
         updateFirst(line, keywordsAndSymbols.at(i), minPos, minString);
