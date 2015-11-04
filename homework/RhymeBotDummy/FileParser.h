@@ -17,6 +17,7 @@
 #include <sstream>
 #include <vector>
 #include <map>
+#include <functional>
 
 //#include "RhymeBot.h"
 

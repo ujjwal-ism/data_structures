@@ -7,7 +7,7 @@ bool compareHP(Car car1, Car car2);
 
 class compareHPFunctor{
 public:
-    bool operator()(const Car &car1, const Car &car2);
+    bool operator()(const Car &car1, const Car &car2) const;
 };
 
 class compareWeightFunctor{
