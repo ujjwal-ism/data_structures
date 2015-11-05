@@ -6,7 +6,6 @@
 #include <algorithm>
 
 #include "../8-Set/SetSorting/Car.h"
-#include "MapExample.h"
 
 using namespace std;
 

@@ -229,13 +229,13 @@ void sample3c(){
 int main(){
 
     // sample2a();
-   sample2b();
+//   sample2b();
    // sample2c();
    // sample2d();
 
-   // sample3a();
-   // sample3b();
-   // sample3c();
+    sample3a();
+    sample3b();
+    sample3c();
 
     return 0;
 }
