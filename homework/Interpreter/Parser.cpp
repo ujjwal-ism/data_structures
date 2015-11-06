@@ -70,8 +70,8 @@ string getNextSymbol(string& line){
     }else{
         string toReturn = line.substr(0, minPos);
         line.erase(0, minPos);
-        while(toReturn.size() != 0 && isspace(line.back())){
-            line.erase(line.end()-1, line.end());
+        while(toReturn.size() != 0 && isspace(toReturn.back())){
+            toReturn.erase(toReturn.end()-1, toReturn.end());
         }
         return toReturn;
     }
