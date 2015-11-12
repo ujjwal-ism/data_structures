@@ -13,10 +13,10 @@ function absoluteValue(value){
 function equal(a,b){
     var resultTrue = 1
     var resultFalse = 0
-    var difference = a-b
-    var absDifference = absoluteValue(difference)
+    var subtraction = a-b
+    var absSubtraction = absoluteValue(subtraction)
     var epsilon = 0.00001
-    if(absDifference < epsilon){
+    if(absSubtraction < epsilon){
         return resultTrue
     }
     return resultFalse
