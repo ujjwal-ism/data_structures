@@ -86,7 +86,7 @@ public:
 
 int main(){
 
-    int n=100;
+    int n=10;
     int max=100;
 
 
@@ -113,7 +113,7 @@ int main(){
     int maxY = 100;
 
 
-    cout << endl << "prioritize closests to origin:" << endl;
+    cout << endl << "prioritize closest to origin:" << endl;
     ClosestToPointComparator closestToOrigin(0,0);
     priority_queue<Point2D, vector<Point2D>, ClosestToPointComparator> closestToOriginPQ(closestToOrigin);
     for(int i=0; i<n; i++){
@@ -123,7 +123,7 @@ int main(){
 
 
 
-    cout << endl << "prioritize closests to reference point:" << endl;
+    cout << endl << "prioritize closest to reference point:" << endl;
     ClosestToPointComparator closestToReferencePoint(50,50);
     priority_queue<Point2D, vector<Point2D>, ClosestToPointComparator> closestToReferencePQ(closestToReferencePoint);
     for(int i=0; i<n; i++){
