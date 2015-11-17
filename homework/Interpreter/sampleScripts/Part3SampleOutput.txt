@@ -1,0 +1,1 @@
+The midPoint is: 0.5<br/>Zero is: 0<br/>
