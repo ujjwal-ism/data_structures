@@ -8,53 +8,47 @@
 #include <sstream>
 #include <vector>
 #include <set>
+#include <map>
+#include <string>
 
 using namespace std;
 
-enum VOWEL_SOUND {
-    AA,AE,AH,AO,AW,AY,EH,ER,EY,IH,IY,OW,OY,UH,UW
-};
-
-enum SOUNDS{
-    B,CH,D,DH,F,G,HH,JH,K,L,M,N,NG,P,R,S,SH,T,TH,V,W,Y,Z,ZH
-};
-
-
 class Sound {
 
-    friend class SoundFactory;
-
 private:
+
     bool vowel;
-    string sound;
-    int pronunciationNumber; // 0 for non-vowels
+    string sourceString; // ex: "IY1" "M" "UW2"
+    string soundSymbol; // ex: "IY" "M" "UW"
+    int variationNumber; // ex: 1 0 2     note: 0 for all non-vowels
+    string type; // ex: "vowel" "stop" "fricative"
+
+    Sound(); // private constructor
+
+    static map<string, Sound> knownSounds;
+
+    static map<string, string> parseTypes();
 
 public:
 
-    Sound(string);
-    bool isVowel();
-    string getSound();
-    int getPronunciationNumber();
+    static const Sound& getSound(string);
+
+    // These will be the most useful functions for RhymeBot
+    const bool& isVowel() const;
+    bool operator==(const Sound &that) const;
+    bool operator!=(const Sound &that) const;
+
+    // These functions can be used if needed
+    const string& getSourceString() const;
+    const string& getSoundSymbol() const;
+    const int& getVariationNumber() const;
+    const string& getType() const;
+
+
+    static void init();
 };
 
 
-class SoundFactory{
-private:
-    set<string> vowelSounds;
-    set<string> nonVowelSounds;
-
-//    bool isVowel(string);
-//    bool isNonVowel(string);
-
-public:
-
-    SoundFactory();
-    void init();
-
-    static Sound makeSound(string);
-
-};
-
-
+ostream& operator<<(ostream &stream, const Sound &sound);
 
 #endif //UNTITLED_SOUND_H

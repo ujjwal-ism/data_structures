@@ -2,9 +2,8 @@
 
 using namespace std;
 
-void pronunciationParser(RhymeBot rhymeBot){
+void pronunciationParser(RhymeBot rhymeBot, string filename){
 
-    string filename = "data/cmudict-0.7b";
     ifstream dataFile;
     dataFile.open(filename);
 
@@ -22,7 +21,8 @@ void pronunciationParser(RhymeBot rhymeBot){
 
         for(vector<string>::iterator it = parts.begin()+1; it < parts.end(); it++){
             if((*it) != "") {
-                pronounce.push_back(SoundFactory::makeSound(*it));
+                Sound thisSound = Sound::getSound(*it);
+                pronounce.push_back(thisSound);
             }
         }
 
@@ -55,7 +55,6 @@ void parsePartsOfSpeech(RhymeBot rhymeBot, string filename, PART_OF_SPEECH partO
             if(word.find_first_of("_") != string::npos){
                 continue;
             }
-
             rhymeBot.addPartOfSpeech(word, partOfSpeech);
         }
     }
@@ -65,7 +64,7 @@ void parseAllPartsOfSpeech(RhymeBot rhymeBot){
     parsePartsOfSpeech(rhymeBot, "data/index.adj", ADJECTIVE);
     parsePartsOfSpeech(rhymeBot, "data/index.adv", ADVERB);
     parsePartsOfSpeech(rhymeBot, "data/index.noun", NOUN);
-    parsePartsOfSpeech(rhymeBot, "data/index.sense", SENSE);
+//    parsePartsOfSpeech(rhymeBot, "data/index.sense", SENSE);
     parsePartsOfSpeech(rhymeBot, "data/index.verb", VERB);
 }
 

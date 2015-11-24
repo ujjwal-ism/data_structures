@@ -24,9 +24,11 @@ public:
 
     /** Inserting Words **/
 
+    // Insert a word with pronunciation into the dictionary
     void insertWithPronunciation(string word, vector<Sound> pronunciation);
-    void addPartOfSpeech(string word, PART_OF_SPEECH partOfSpeech);
 
+    // add part of speech for later parts. If word is not in the pronunciation dictionary, it can be ignored
+    void addPartOfSpeech(string word, PART_OF_SPEECH partOfSpeech);
 
     /** Helper Functions **/
 
@@ -59,20 +61,24 @@ public:
 
     /** Finding the Perfect Word **/
 
+
     // returns the best word with the specified number of syllables and part of speech that rhymes with the given word.
     // Best is defined by the maximum number of rhyming syllables.
+    // If no such word exists, returns ""
     string findBestRhyme(int numberOfSyllables, string rhymesWith);
     string findBestRhyme(PART_OF_SPEECH, string rhymesWith);
     string findBestRhyme(int numberOfSyllables, PART_OF_SPEECH, string rhymesWith);
 
     // returns the best word with the specified number of syllables and part of speech that forms an alliteration with
     // the given word. Best is defined by the number of maximum number of alliterating sounds.
+    // If no such word exists, returns ""
     string findBestAlliteration(int numberOfSyllables, string alliterationWith);
     string findBestAlliteration(PART_OF_SPEECH, string alliterationWith);
     string findBestAlliteration(int numberOfSyllables, PART_OF_SPEECH, string alliterationWith);
 
     // Combine findBestRhyme and findBestAlliteration. Best is defined by the sum of the number of rhyming syllables
     //  and the number of alliterating sounds.
+    // If no such word exists, returns ""
     string findPerfectWord(int numberOfSyllables, PART_OF_SPEECH, string rhymesWith, string alliterationWith);
 
 };

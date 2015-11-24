@@ -14,7 +14,7 @@ using namespace std;
 
 //need to handle multiple pronunciations for some RhymeBot
 
-void pronunciationParser(RhymeBot);
+void pronunciationParser(RhymeBot, string);
 void parsePartOfSpeech(RhymeBot, string, PART_OF_SPEECH);
 void parseAllPartsOfSpeech(RhymeBot);
 

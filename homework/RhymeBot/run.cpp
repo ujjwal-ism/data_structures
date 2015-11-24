@@ -9,8 +9,15 @@ int main(){
 
     RhymeBot rhymeBot;
 
-    pronunciationParser(rhymeBot);
-    parseAllPartsOfSpeech(rhymeBot);
+    Sound::init();
+
+    string dictionaryFile = "data/cmudict-0.7b-onlyA"; // Testing dictionary. Contains only words that start with 'a'
+//    string dictionaryFile = "data/cmudict-0.7b"; // Full dictionary
+
+    pronunciationParser(rhymeBot, dictionaryFile);
+
+    // Uncomment the following line when working on parts of speech
+//    parseAllPartsOfSpeech(rhymeBot);
 
     string input;
     string option = "0";
