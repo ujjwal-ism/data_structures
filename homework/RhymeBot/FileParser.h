@@ -14,9 +14,9 @@ using namespace std;
 
 //need to handle multiple pronunciations for some RhymeBot
 
-void pronunciationParser(RhymeBot, string);
-void parsePartOfSpeech(RhymeBot, string, PART_OF_SPEECH);
-void parseAllPartsOfSpeech(RhymeBot);
+void pronunciationParser(RhymeBot&, string);
+void parsePartOfSpeech(RhymeBot&, string, PART_OF_SPEECH);
+void parseAllPartsOfSpeech(RhymeBot&);
 
 vector<string>& tokenize(string line, string delimiter);
 

@@ -2,7 +2,7 @@
 
 using namespace std;
 
-void pronunciationParser(RhymeBot rhymeBot, string filename){
+void pronunciationParser(RhymeBot& rhymeBot, string filename){
 
     ifstream dataFile;
     dataFile.open(filename);
@@ -37,7 +37,7 @@ void pronunciationParser(RhymeBot rhymeBot, string filename){
 
 
 
-void parsePartsOfSpeech(RhymeBot rhymeBot, string filename, PART_OF_SPEECH partOfSpeech){
+void parsePartsOfSpeech(RhymeBot& rhymeBot, string filename, PART_OF_SPEECH partOfSpeech){
 
     ifstream dataFile;
     dataFile.open(filename);
@@ -60,7 +60,7 @@ void parsePartsOfSpeech(RhymeBot rhymeBot, string filename, PART_OF_SPEECH partO
     }
 }
 
-void parseAllPartsOfSpeech(RhymeBot rhymeBot){
+void parseAllPartsOfSpeech(RhymeBot& rhymeBot){
     parsePartsOfSpeech(rhymeBot, "data/index.adj", ADJECTIVE);
     parsePartsOfSpeech(rhymeBot, "data/index.adv", ADVERB);
     parsePartsOfSpeech(rhymeBot, "data/index.noun", NOUN);
