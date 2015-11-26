@@ -30,6 +30,7 @@ void pronunciationParser(RhymeBot& rhymeBot, string filename){
             word = word.substr(0,word.find_first_of("("));
         }
 
+        transform(word.begin(), word.end(), word.begin(), ::tolower);
         rhymeBot.insertWithPronunciation(word, pronounce);
 
     }
