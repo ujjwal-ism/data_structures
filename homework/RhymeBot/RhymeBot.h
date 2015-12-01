@@ -39,7 +39,7 @@ public:
     //  largest rhyming suffix.
     //
     // Words are considered a rhyme if they have the same last vowel sound as well as the same sounds following
-    //  the last vowel. Note: These are syllabic rhymes since the matching vowels might not both be stressed
+    //  the last vowel. Note: These are syllabic rhymes since the matching vowels might not be stressed
     int rhymingSyllables(string word1, string word2);
 
     // returns the number of identical sounds in the largest matching prefix of the two words.

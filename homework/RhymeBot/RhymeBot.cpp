@@ -36,7 +36,7 @@ int RhymeBot::countSyllables(string word){
 //  largest rhyming suffix.
 //
 // Words are considered a rhyme if they have the same last vowel sound as well as the same sounds following
-//  the last vowel. Note: These are syllabic rhymes since the matching vowels might not both be stressed
+//  the last vowel. Note: These are syllabic rhymes since the matching vowels might not be stressed
 int RhymeBot::rhymingSyllables(string word1, string word2){
     // TODO
     return 0;
@@ -78,11 +78,11 @@ string RhymeBot::findBestRhyme(int numberOfSyllables, string rhymesWith){
     // TODO
     return "";
 }
-string RhymeBot::findBestRhyme(PART_OF_SPEECH, string rhymesWith){
+string RhymeBot::findBestRhyme(PART_OF_SPEECH partOfSpeech, string rhymesWith){
     // TODO
     return "";
 }
-string RhymeBot::findBestRhyme(int numberOfSyllables, PART_OF_SPEECH, string rhymesWith){
+string RhymeBot::findBestRhyme(int numberOfSyllables, PART_OF_SPEECH partOfSpeech, string rhymesWith){
     // TODO
     return "";
 }
@@ -93,18 +93,18 @@ string RhymeBot::findBestAlliteration(int numberOfSyllables, string alliteration
     // TODO
     return "";
 }
-string RhymeBot::findBestAlliteration(PART_OF_SPEECH, string alliterationWith){
+string RhymeBot::findBestAlliteration(PART_OF_SPEECH partOfSpeech, string alliterationWith){
     // TODO
     return "";
 }
-string RhymeBot::findBestAlliteration(int numberOfSyllables, PART_OF_SPEECH, string alliterationWith){
+string RhymeBot::findBestAlliteration(int numberOfSyllables, PART_OF_SPEECH partOfSpeech, string alliterationWith){
     // TODO
     return "";
 }
 
 // Combine findBestRhyme and findBestAlliteration. Best is defined by the sum of the number of rhyming syllables
 //  and the number of alliterating sounds.
-string RhymeBot::findPerfectWord(int numberOfSyllables, PART_OF_SPEECH, string rhymesWith, string alliterationWith){
+string RhymeBot::findPerfectWord(int numberOfSyllables, PART_OF_SPEECH partOfSpeech, string rhymesWith, string alliterationWith){
     // TODO
     return "";
 }
