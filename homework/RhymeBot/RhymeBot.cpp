@@ -7,11 +7,11 @@ void RhymeBot::insertWithPronunciation(string word, vector<Sound> pronunciation)
     // TODO
 
     // The following lines should be removed. They are here to show what is being added to you data structures
-    cout << word << ": ";
-    for(int i=0; i<pronunciation.size(); i++){
-        cout << pronunciation.at(i) << " ";
-    }
-    cout << endl;
+//    cout << word << ": ";
+//    for(int i=0; i<pronunciation.size(); i++){
+//        cout << pronunciation.at(i) << " ";
+//    }
+//    cout << endl;
 
 }
 
@@ -19,7 +19,7 @@ void RhymeBot::addPartOfSpeech(string word, PART_OF_SPEECH partOfSpeech){
     // TODO
 
     // The following line should be removed. They are here to show what is being added to you data structures
-    cout << word << ": " << partOfSpeech << endl;
+//    cout << word << ": " << partOfSpeech << endl;
 
 }
 
