@@ -597,8 +597,8 @@ int bestRhymeTest(RhymeBot& rhymeBot){
     expectedCombined.insert("visa");
 
     syllablesTestPassed &= bestRhymesCaseSyllables(word, syllables, expectedSyllables, rhymeBot);
-    speechTestPassed &= bestRhymesCaseSpeech(word, partOfSpeech, expectedSyllables, rhymeBot);
-    combinedTestPassed &= bestRhymesCaseCombined(word, syllables, partOfSpeech, expectedSyllables, rhymeBot);
+    speechTestPassed &= bestRhymesCaseSpeech(word, partOfSpeech, expectedSpeech, rhymeBot);
+    combinedTestPassed &= bestRhymesCaseCombined(word, syllables, partOfSpeech, expectedCombined, rhymeBot);
 
     expectedSyllables.clear();
     expectedSpeech.clear();
@@ -619,8 +619,8 @@ int bestRhymeTest(RhymeBot& rhymeBot){
     expectedCombined.insert("supra");
 
     syllablesTestPassed &= bestRhymesCaseSyllables(word, syllables, expectedSyllables, rhymeBot);
-    speechTestPassed &= bestRhymesCaseSpeech(word, partOfSpeech, expectedSyllables, rhymeBot);
-    combinedTestPassed &= bestRhymesCaseCombined(word, syllables, partOfSpeech, expectedSyllables, rhymeBot);
+    speechTestPassed &= bestRhymesCaseSpeech(word, partOfSpeech, expectedSpeech, rhymeBot);
+    combinedTestPassed &= bestRhymesCaseCombined(word, syllables, partOfSpeech, expectedCombined, rhymeBot);
 
 
     expectedSyllables.clear();
@@ -638,8 +638,8 @@ int bestRhymeTest(RhymeBot& rhymeBot){
     expectedCombined.insert("invalid");
 
     syllablesTestPassed &= bestRhymesCaseSyllables(word, syllables, expectedSyllables, rhymeBot);
-    speechTestPassed &= bestRhymesCaseSpeech(word, partOfSpeech, expectedSyllables, rhymeBot);
-    combinedTestPassed &= bestRhymesCaseCombined(word, syllables, partOfSpeech, expectedSyllables, rhymeBot);
+    speechTestPassed &= bestRhymesCaseSpeech(word, partOfSpeech, expectedSpeech, rhymeBot);
+    combinedTestPassed &= bestRhymesCaseCombined(word, syllables, partOfSpeech, expectedCombined, rhymeBot);
 
     expectedSyllables.clear();
     expectedSpeech.clear();
@@ -657,8 +657,8 @@ int bestRhymeTest(RhymeBot& rhymeBot){
 
 
     syllablesTestPassed &= bestRhymesCaseSyllables(word, syllables, expectedSyllables, rhymeBot);
-    speechTestPassed &= bestRhymesCaseSpeech(word, partOfSpeech, expectedSyllables, rhymeBot);
-    combinedTestPassed &= bestRhymesCaseCombined(word, syllables, partOfSpeech, expectedSyllables, rhymeBot);
+    speechTestPassed &= bestRhymesCaseSpeech(word, partOfSpeech, expectedSpeech, rhymeBot);
+    combinedTestPassed &= bestRhymesCaseCombined(word, syllables, partOfSpeech, expectedCombined, rhymeBot);
 
 
     if(syllablesTestPassed && speechTestPassed && combinedTestPassed){
@@ -732,8 +732,8 @@ int bestAlliterationTest(RhymeBot& rhymeBot){
     expectedCombined.insert("bask");
 
     syllablesTestPassed &= bestAlliterationCaseSyllables(word, syllables, expectedSyllables, rhymeBot);
-    speechTestPassed &= bestAlliterationCaseSpeech(word, partOfSpeech, expectedSyllables, rhymeBot);
-    combinedTestPassed &= bestAlliterationCaseCombined(word, syllables, partOfSpeech, expectedSyllables, rhymeBot);
+    speechTestPassed &= bestAlliterationCaseSpeech(word, partOfSpeech, expectedSpeech, rhymeBot);
+    combinedTestPassed &= bestAlliterationCaseCombined(word, syllables, partOfSpeech, expectedCombined, rhymeBot);
 
     expectedSyllables.clear();
     expectedSpeech.clear();
@@ -752,8 +752,8 @@ int bestAlliterationTest(RhymeBot& rhymeBot){
     expectedCombined.insert("by");
 
     syllablesTestPassed &= bestAlliterationCaseSyllables(word, syllables, expectedSyllables, rhymeBot);
-    speechTestPassed &= bestAlliterationCaseSpeech(word, partOfSpeech, expectedSyllables, rhymeBot);
-    combinedTestPassed &= bestAlliterationCaseCombined(word, syllables, partOfSpeech, expectedSyllables, rhymeBot);
+    speechTestPassed &= bestAlliterationCaseSpeech(word, partOfSpeech, expectedSpeech, rhymeBot);
+    combinedTestPassed &= bestAlliterationCaseCombined(word, syllables, partOfSpeech, expectedCombined, rhymeBot);
 
 
     expectedSyllables.clear();
@@ -769,8 +769,8 @@ int bestAlliterationTest(RhymeBot& rhymeBot){
     expectedCombined.insert("sis");
 
     syllablesTestPassed &= bestAlliterationCaseSyllables(word, syllables, expectedSyllables, rhymeBot);
-    speechTestPassed &= bestAlliterationCaseSpeech(word, partOfSpeech, expectedSyllables, rhymeBot);
-    combinedTestPassed &= bestAlliterationCaseCombined(word, syllables, partOfSpeech, expectedSyllables, rhymeBot);
+    speechTestPassed &= bestAlliterationCaseSpeech(word, partOfSpeech, expectedSpeech, rhymeBot);
+    combinedTestPassed &= bestAlliterationCaseCombined(word, syllables, partOfSpeech, expectedCombined, rhymeBot);
 
     expectedSyllables.clear();
     expectedSpeech.clear();
@@ -799,8 +799,8 @@ int bestAlliterationTest(RhymeBot& rhymeBot){
 
 
     syllablesTestPassed &= bestAlliterationCaseSyllables(word, syllables, expectedSyllables, rhymeBot);
-    speechTestPassed &= bestAlliterationCaseSpeech(word, partOfSpeech, expectedSyllables, rhymeBot);
-    combinedTestPassed &= bestAlliterationCaseCombined(word, syllables, partOfSpeech, expectedSyllables, rhymeBot);
+    speechTestPassed &= bestAlliterationCaseSpeech(word, partOfSpeech, expectedSpeech, rhymeBot);
+    combinedTestPassed &= bestAlliterationCaseCombined(word, syllables, partOfSpeech, expectedCombined, rhymeBot);
 
 
     if(syllablesTestPassed && speechTestPassed && combinedTestPassed){
