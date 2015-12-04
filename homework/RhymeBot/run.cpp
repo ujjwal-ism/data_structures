@@ -176,7 +176,7 @@ int alliterationSoundsTest(RhymeBot& rhymeBot){
 
 /////////
 
-bool allRhymesCase(string word, const unordered_set<string>& expected, RhymeBot &rhymeBot) {
+bool allRhymesCase(string word, unordered_set<string>& expected, RhymeBot &rhymeBot) {
     vector<string>* computed = rhymeBot.getAllRhymes(word);
     bool result = true;
     for(vector<string>::iterator it = computed->begin(); it != computed->end(); it++){
@@ -278,7 +278,7 @@ int allRhymesTest(RhymeBot& rhymeBot){
 
 /////////
 
-bool allAlliterationsCase(string word, const unordered_set<string>& expected, RhymeBot &rhymeBot) {
+bool allAlliterationsCase(string word, unordered_set<string>& expected, RhymeBot &rhymeBot) {
     vector<string>* computed = rhymeBot.getAllAlliterations(word);
     bool result = true;
     for(vector<string>::iterator it = computed->begin(); it != computed->end(); it++){
@@ -531,7 +531,7 @@ int allAlliterationsTest(RhymeBot& rhymeBot){
 /////////
 
 
-bool bestRhymesCaseSyllables(string word, int syllables, const unordered_set<string>& expected, RhymeBot &rhymeBot) {
+bool bestRhymesCaseSyllables(string word, int syllables, unordered_set<string>& expected, RhymeBot &rhymeBot) {
     string computed = rhymeBot.findBestRhyme(syllables, word);
     bool result = true;
     if(expected.count(computed) == 0){
@@ -543,7 +543,7 @@ bool bestRhymesCaseSyllables(string word, int syllables, const unordered_set<str
 }
 
 bool bestRhymesCaseSpeech(string word, PART_OF_SPEECH partOfSpeech,
-                          const unordered_set<string>& expected, RhymeBot &rhymeBot) {
+                          unordered_set<string>& expected, RhymeBot &rhymeBot) {
 
     string computed = rhymeBot.findBestRhyme(partOfSpeech, word);
     bool result = true;
@@ -554,8 +554,7 @@ bool bestRhymesCaseSpeech(string word, PART_OF_SPEECH partOfSpeech,
     return result;
 }
 
-bool bestRhymesCaseCombined(string word, int syllables, PART_OF_SPEECH partOfSpeech,
-                    const unordered_set<string>& expected, RhymeBot &rhymeBot) {
+bool bestRhymesCaseCombined(string word, int syllables, PART_OF_SPEECH partOfSpeech, unordered_set<string>& expected, RhymeBot &rhymeBot) {
 
     string computed = rhymeBot.findBestRhyme(syllables, partOfSpeech, word);
     bool result = true;
@@ -676,7 +675,7 @@ int bestRhymeTest(RhymeBot& rhymeBot){
 /////////
 
 
-bool bestAlliterationCaseSyllables(string word, int syllables, const unordered_set<string>& expected, RhymeBot &rhymeBot) {
+bool bestAlliterationCaseSyllables(string word, int syllables, unordered_set<string>& expected, RhymeBot &rhymeBot) {
     string computed = rhymeBot.findBestAlliteration(syllables, word);
     bool result = true;
     if(expected.count(computed) == 0){
@@ -688,7 +687,7 @@ bool bestAlliterationCaseSyllables(string word, int syllables, const unordered_s
 }
 
 bool bestAlliterationCaseSpeech(string word, PART_OF_SPEECH partOfSpeech,
-                          const unordered_set<string>& expected, RhymeBot &rhymeBot) {
+                                unordered_set<string>& expected, RhymeBot &rhymeBot) {
 
     string computed = rhymeBot.findBestAlliteration(partOfSpeech, word);
     bool result = true;
@@ -700,7 +699,7 @@ bool bestAlliterationCaseSpeech(string word, PART_OF_SPEECH partOfSpeech,
 }
 
 bool bestAlliterationCaseCombined(string word, int syllables, PART_OF_SPEECH partOfSpeech,
-                            const unordered_set<string>& expected, RhymeBot &rhymeBot) {
+                                  unordered_set<string>& expected, RhymeBot &rhymeBot) {
 
     string computed = rhymeBot.findBestAlliteration(syllables, partOfSpeech, word);
     bool result = true;
@@ -818,7 +817,7 @@ int bestAlliterationTest(RhymeBot& rhymeBot){
 /////////
 
 bool perfectWordCase(string rhymeWord, string alliterateWord, int syllables, PART_OF_SPEECH partOfSpeech,
-                                  const unordered_set<string>& expected, RhymeBot &rhymeBot) {
+                                   unordered_set<string>& expected, RhymeBot &rhymeBot) {
 
     string computed = rhymeBot.findPerfectWord(syllables, partOfSpeech, rhymeWord, alliterateWord);
     bool result = true;
