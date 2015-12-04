@@ -292,7 +292,7 @@ bool allAlliterationsCase(string word, unordered_set<string>& expected, RhymeBot
     sort(computed->begin(), computed->end());
 
     for(unordered_set<string>::iterator it = expected.begin(); it != expected.end(); it++){
-        if(*it != word && !binary_search(computed->begin(),computed->end(),word)){
+        if(*it != word && !binary_search(computed->begin(),computed->end(), *it)){
             cout << "\"" << word << "\" alliterates with \"" << *it;
             cout << "\" which was not returned by getAllAlliterations(\"" << word << "\")" << endl;
             result = false;
