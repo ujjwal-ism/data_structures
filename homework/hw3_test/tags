@@ -1,0 +1,24 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+BaseClass	BaseClass.cpp	/^BaseClass::BaseClass() {$/;"	f	class:BaseClass
+BaseClass	BaseClass.cpp	/^BaseClass::BaseClass(int* values, int numberOfValues) {$/;"	f	class:BaseClass
+BaseClass	BaseClass.h	/^class BaseClass {$/;"	c
+CSE250_FALL2015_BASECLASS_H	BaseClass.h	2;"	d
+CSE250_FALL2015_DERIVEDCLASS_H	DerivedClass.h	2;"	d
+CSE250_FALL2015_OBJECTSEARCH_H	ObjectSearch.h	2;"	d
+DerivedClass	DerivedClass.h	/^    DerivedClass() : BaseClass(){}$/;"	f	class:DerivedClass
+DerivedClass	DerivedClass.h	/^    DerivedClass(int* values, int numberOfValues) : BaseClass(values, numberOfValues){}$/;"	f	class:DerivedClass
+DerivedClass	DerivedClass.h	/^class DerivedClass : public BaseClass {$/;"	c
+evaluateAsPolynomial	BaseClass.cpp	/^int BaseClass::evaluateAsPolynomial(int x){$/;"	f	class:BaseClass
+findClosestToZero	DerivedClass.cpp	/^int DerivedClass::findClosestToZero() {$/;"	f	class:DerivedClass
+findClosestToZero	DerivedClass.cpp	/^int DerivedClass::findClosestToZero(int n) {$/;"	f	class:DerivedClass
+findEqualPolyEval	ObjectSearch.cpp	/^bool findEqualPolyEval(BaseClass* instancesToCheck, int numberOfInstances,$/;"	f
+getMultiplication	BaseClass.cpp	/^int BaseClass::getMultiplication(){$/;"	f	class:BaseClass
+getSum	BaseClass.cpp	/^int BaseClass::getSum(){$/;"	f	class:BaseClass
+main	run.cpp	/^int main(){$/;"	f
+numberOfValues	BaseClass.h	/^    int numberOfValues;$/;"	m	class:BaseClass
+values	BaseClass.h	/^    int* values;$/;"	m	class:BaseClass

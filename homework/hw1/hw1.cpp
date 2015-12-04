@@ -1,17 +1,26 @@
-#include "hw1.h"
+#include <iostream>
+
+std::string getCustomString();
+int countChars(std::string, char);
+int countCharsCustom(char);
+
 
 std::string getCustomString(){
-    // TODO
-    return "a string";
+    return "Jesse Hartloff and then some more words";
 }
 
 
 int countChars(std::string words, char character){
-    // TODO
+    int count=0;
+    for(int i=0; i<words.length(); i++){
+        if(words[i] == character){
+            count++;
+        }
+    }
+    return count;
 }
 
 
 int countCharsCustom(char character){
-    // TODO
+    return countChars(getCustomString(), character);
 }
-
