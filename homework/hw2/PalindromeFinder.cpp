@@ -33,7 +33,7 @@ void truncate(string& input){
 
 PalindromeFinder::PalindromeFinder(){}
 
-/*string PalindromeFinder::toString(){
+string PalindromeFinder::toString(){
     stringstream ss;
     ss << "largest palindrome seen so far is \"" << this->getLargestPalindromeFound();
     ss << "\" with size " << this->getSizeOfLargestPalindromeFound();
@@ -47,7 +47,7 @@ string PalindromeFinder::getLargestPalindromeFound(){
 int PalindromeFinder::getSizeOfLargestPalindromeFound(){
     return this->largestPalindromeFound.length();
 }
-*/
+
 //returns true if input is a palindrome, false otherwise. If it is a palindrome and
 // it is the largest seen so far, it should be stored in largestPalindromeFound.
 bool PalindromeFinder::isPalindrome(string input){
@@ -60,32 +60,44 @@ bool PalindromeFinder::isPalindrome(string input){
         if(input.at(i) != input.at(n-i-1))
             return false;
     }
+    if(input.length()> this->getSizeOfLargestPalindromeFound()){
+        this->largestPalindromeFound=input;
+    }
     return true;
     
 }
-/*
+
 //Returns the largest palindrome in the string array inputStrings. If this is the
 // the largest palindrome seen, this instance of the class should store it in
 // largestPalindromeFound.
 string PalindromeFinder::getLargestPalindrome(string* inputStrings, int numberOfStrings){
-    //TODO Debug getLargestPalindrome so it outputs the proper string and updates largestPalindromeFound
+
     string largestPalindrome = "";
+    int largestsize=0;
+
     for(int i=0; i<numberOfStrings; i++){
-        if(this->isPalindrome(*(inputStrings+i))){
-            largestPalindrome = *(inputStrings);
+
+        string currentstring = *(inputStrings+i);
+        truncate(currentstring);
+
+        if(this->isPalindrome(currentstring) && (currentstring.length() > largestsize)){
+            largestPalindrome = *(inputStrings + i);
+            largestsize = currentstring.length();
         }
-    }
-    this->largestPalindromeFound = largestPalindrome;
+    
+    if(largestsize > this->getSizeOfLargestPalindromeFound())
+        this->largestPalindromeFound = currentstring;
+   } 
     return largestPalindrome;
 }
-
+/*
 //truncates the input string to its largest substring that is a palindrome.
 // If this palindrome is the biggest seen so far, the class should store it
 // in largestPalindromeFound.
 void PalindromeFinder::truncateToLargestPalindrome(string& inputString){
     //TODO define truncateToLargestPalindrome with the proper functionality
-}
-*/
+}*/
+
 int main(int argc, char const *argv[])
 {
     PalindromeFinder *baba;
@@ -95,6 +107,14 @@ int main(int argc, char const *argv[])
     getline(cin,str);
 
     cout<< baba->isPalindrome(str)<<endl;
-    
+   // cout<< baba->getLargestPalindromeFound();
+    string strings[3];
+
+    strings[0]="Panama";
+    strings[1]="Mad,,..am";
+    strings[2]="A man, a plan, a canal, Panama,";
+
+    cout<< baba->getLargestPalindrome(strings,3)<<endl;
+
     return 0;
 }
