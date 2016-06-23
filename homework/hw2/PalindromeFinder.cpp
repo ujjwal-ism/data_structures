@@ -88,26 +88,50 @@ string PalindromeFinder::getLargestPalindrome(string* inputStrings, int numberOf
     if(largestsize > this->getSizeOfLargestPalindromeFound())
         this->largestPalindromeFound = currentstring;
    } 
+
     return largestPalindrome;
 }
-/*
+
 //truncates the input string to its largest substring that is a palindrome.
 // If this palindrome is the biggest seen so far, the class should store it
 // in largestPalindromeFound.
 void PalindromeFinder::truncateToLargestPalindrome(string& inputString){
-    //TODO define truncateToLargestPalindrome with the proper functionality
-}*/
+    //Simple but time consuming algorithm ....... can be improved.
+    truncate(inputString);
+
+    string biggestsubPalindrome ="";
+    int largestsize=0;
+    int n = inputString.length();
+
+    for (int i = 0; i < n; ++i)
+    {
+        for (int j = 0; j < n-i+1; ++j)
+        {
+            string substring = inputString.substr(i,j);
+            if(this->isPalindrome(substring) && (substring.length()> largestsize)){
+                    biggestsubPalindrome = substring;
+                    largestsize = substring.length();
+            }
+        }
+    }
+    if(largestsize > this->getSizeOfLargestPalindromeFound()){
+        this->largestPalindromeFound = biggestsubPalindrome;
+    }
+
+    inputString = biggestsubPalindrome;
+}
+// The main begins.............
 
 int main(int argc, char const *argv[])
 {
-    PalindromeFinder *baba;
-    string str;
+    PalindromeFinder *baba = new PalindromeFinder();
+    string str,str1;
 
     cout<< "Enter a string>>>>"<<endl;
     getline(cin,str);
 
     cout<< baba->isPalindrome(str)<<endl;
-   // cout<< baba->getLargestPalindromeFound();
+    
     string strings[3];
 
     strings[0]="Panama";
@@ -115,6 +139,14 @@ int main(int argc, char const *argv[])
     strings[2]="A man, a plan, a canal, Panama,";
 
     cout<< baba->getLargestPalindrome(strings,3)<<endl;
+
+    cout << "Enter a string to check whether it's any substring is a palindrome or not:"<<endl;
+    getline(cin,str1);
+
+    baba->truncateToLargestPalindrome(str1);
+    cout<< str1<<endl;
+
+    cout << baba->toString()<<endl;
 
     return 0;
 }
