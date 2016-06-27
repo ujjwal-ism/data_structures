@@ -1,5 +1,5 @@
-#ifndef CSE250_FALL2015_DERIVEDCLASS_H
-#define CSE250_FALL2015_DERIVEDCLASS_H
+#ifndef CSE250_SUMMER2016_DERIVEDCLASS_H
+#define CSE250_SUMMER2016_DERIVEDCLASS_H
 
 #include "BaseClass.h"
 
@@ -14,7 +14,12 @@ public:
 
     int findClosestToZero();
     int findClosestToZero(int);
+
+    int getSum();
+    int getMultiplication();
+    int evaluateAsPolynomial(int);
+
 };
 
 
-#endif //CSE250_FALL2015_DERIVEDCLASS_H
+#endif //CSE250_SUMMER2016_DERIVEDCLASS_H

@@ -1,14 +1,12 @@
 #include "BaseClass.h"
 
-
 BaseClass::BaseClass() {
-}
+};
 
 BaseClass::BaseClass(int* values, int numberOfValues) {
     this->values = values;
     this->numberOfValues = numberOfValues;
-}
-
+};
 
 int BaseClass::getSum(){
     return numberOfValues > 2 ? values[0]+(*values) : numberOfValues;
