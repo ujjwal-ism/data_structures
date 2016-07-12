@@ -5,21 +5,24 @@
 #include <vector>
 
 int GameUtil::compute(Square* square, Player* player){
-  // TODO: Part 1 debug
+  
   double chi = player->getChi();
   double weight = player->getWeight();
   double teleporterEnergy = square->getTeleporterEnergy();
   double cannonPowder = square->getCannonPowder();
 
   double teleporterCompute = 0;
-  for(double i = 0.0; i < chi;){
-    teleporterCompute += sqrt(2.0 * ++i * teleporterEnergy);
+  for(int i = 0; i <= ((int)chi);i++){
+    teleporterCompute += sqrt(chi * i * teleporterEnergy);
   }
   teleporterCompute *= 1.0/(1.0 + chi);
 
-  double cannonCompute = pow((((int)cannonPowder)^17)/weight*1.5,2)/9.8;
+  double a= pow(cannonPowder,1.7);
+  double b= pow(weight,1.5);
+  double t=a/b;
+  double cannonCompute = pow(t,2)/9.8;
 
-  return std::max(cannonCompute < teleporterCompute ? cannonCompute : teleporterCompute, 1.0);
+  return std::max(cannonCompute > teleporterCompute ? cannonCompute : teleporterCompute, 1.0);
 }
 
 bool GameUtil::isValidPath(std::vector<int>& path, Player* player, Game* game){
