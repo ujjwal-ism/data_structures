@@ -1,4 +1,4 @@
-#include "square.h"
+/*#include "square.h"
 #include "game.h"
 #include "player.h"
 #include "gameUtil.h"
@@ -41,4 +41,4 @@ int main(){
   std::cout << "Example path is valid (0/1): " << valid << std::endl;
 
   return 0;
-}
+}*/
