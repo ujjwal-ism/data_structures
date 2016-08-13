@@ -1,4 +1,4 @@
-#include <iostream>
+#include <bits/stdc++.h>
 #include "gameUtil.h"
 #include "square.h"
 #include "player.h"
@@ -18,36 +18,73 @@ int test_part1(){
 int test_part2(){
 	Player *player1 = new Player(10,3);
 	std::vector<Square*> game_board;
-	 game_board.push_back(new Square(15,15));
-	 game_board.push_back(new Square(19,11));
-  	game_board.push_back(new Square(24,11));
-  	game_board.push_back(new Square(24,9));
-  	game_board.push_back(new Square(25,7));
-  	game_board.push_back(new Square(18,8));
-  	game_board.push_back(new Square(26,15));
-  	game_board.push_back(new Square(22,13));
-  	game_board.push_back(new Square(26,14));
-  	game_board.push_back(new Square(23,14));
-  	game_board.push_back(new Square(24,5));
-  	game_board.push_back(new Square(21,4));
-  	game_board.push_back(new Square(25,6));
-  	game_board.push_back(new Square(20,19));
-  	game_board.push_back(new Square(28,3));
+	game_board.push_back(new Square(5,5));
+	game_board.push_back(new Square(9,1));
+  game_board.push_back(new Square(4,3));
+  game_board.push_back(new Square(4,9));
+  game_board.push_back(new Square(5,7));
+  game_board.push_back(new Square(8,8));
+  game_board.push_back(new Square(16,5));
+  game_board.push_back(new Square(12,3));
+  game_board.push_back(new Square(16,4));
+  game_board.push_back(new Square(3,4));
+  game_board.push_back(new Square(4,5));
+  game_board.push_back(new Square(11,4));
+  game_board.push_back(new Square(15,6));
+  game_board.push_back(new Square(10,9));
+  game_board.push_back(new Square(1,3));
 
   	Game *game1 = new Game(game_board);
 
   	std::vector<int> path;
   	path.push_back(0);
-  	path.push_back(3);
-  	path.push_back(5);
+  	path.push_back(2);
+  	path.push_back(4);
   	path.push_back(7);
   	path.push_back(9);
-  	path.push_back(14);
+  	path.push_back(12);
+    path.push_back(14);
 
-  	GameUtil* util=new GameUtil();
+  	GameUtil* util= new GameUtil();
   	cout<<util->isValidPath(path,player1,game1)<<endl;
+    
+}
+void sudo_test_part3(){
+  Player *player = new Player(10,3);
+  std::vector<Square*> game_board;
+ /* game_board.push_back(new Square(5,5));
+  game_board.push_back(new Square(9,1));
+  game_board.push_back(new Square(4,3));
+  game_board.push_back(new Square(4,9));
+  game_board.push_back(new Square(5,7));
+  game_board.push_back(new Square(8,8));
+  game_board.push_back(new Square(16,5));
+  game_board.push_back(new Square(12,3));
+  game_board.push_back(new Square(16,4));
+  game_board.push_back(new Square(3,4));
+  game_board.push_back(new Square(4,5));
+  game_board.push_back(new Square(11,4));
+  game_board.push_back(new Square(15,6));
+  game_board.push_back(new Square(10,9));
+  game_board.push_back(new Square(1,3));
+*/
 
-} 	
+  std::srand(time(NULL));
+
+  int rand_c_p,rand_t_e;
+  for (int i = 0; i < 100; ++i)
+  {
+    rand_c_p = std::rand()%10;
+    rand_t_e = std::rand()%10;
+    game_board.push_back(new Square(rand_c_p,rand_t_e));
+  }
+
+    Game *game = new Game(game_board);
+
+    GameUtil *util = new GameUtil();
+    util->shortestPathDistance(game,player); 
+}
+ 	
 
 int main() {
 	if (test_part1()) {
@@ -62,4 +99,5 @@ int main() {
 	}else{
 		cout<<"Test 2 failed"<<endl;
 	}
+  sudo_test_part3();
 }

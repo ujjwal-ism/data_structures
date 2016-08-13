@@ -1,5 +1,5 @@
-#ifndef CSE250_FALL2015_GAMEUTIL_H
-#define CSE250_FALL2015_GAMEUTIL_H
+#ifndef MONSOON_2016_GAMEUTIL_H
+#define MONSOON_2016_GAMEUTIL_H
 
 #include "game.h"
 #include "player.h"
@@ -10,6 +10,8 @@ class GameUtil{
     int compute(Square*, Player*);
     bool isValidPath(std::vector<int>&, Player*, Game*);
     int shortestPathDistance(Game*, Player*);
+    int max_distance(int,int*,int);
+
 };
 
 #endif

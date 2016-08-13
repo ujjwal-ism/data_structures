@@ -1,5 +1,5 @@
-#ifndef CSE250_FALL2015_PLAYER_H
-#define CSE250_FALL2015_PLAYER_H
+#ifndef MONSOON_2016_PLAYER_H
+#define MONSOON_2016_PLAYER_H
 
 class Player{
   private:

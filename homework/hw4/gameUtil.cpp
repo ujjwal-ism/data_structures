@@ -52,8 +52,57 @@ bool GameUtil::isValidPath(std::vector<int>& path, Player* player, Game* game){
 
     return true; 
 }
+int GameUtil::max_distance(int index,int board_passed[],int size){
+  int prev = -1;
+  int loc;
+  for (int i = index+1; i <=board_passed[index]; ++i)
+  {
+    if(index+board_passed[i] > prev){
+      if(index+board_passed[i] >= size-1){
+        return i;
+      }
+      prev = index+board_passed[i];
+      loc = i;
+    }
+  }
+  return loc;
+}
+
 
 int GameUtil::shortestPathDistance(Game* game, Player* player){
-  // TODO: Part 3
-  return -1;
+  
+  std::vector<Square*> board = game->getBoard();
+  int board_array[board.size()];
+  for (int i = 0; i < board.size(); ++i)
+  {
+    board_array[i] = compute(board[i],player);
+  }
+  /*for (int i = 0; i < board.size(); ++i)
+  {
+    std::cout<<board_array[i]<<" ";
+  }
+  std::cout<<"\n";*/
+
+  std::vector<int> path;
+  path.push_back(0);
+  int path_index=0;
+  int size = board.size();
+
+  while(1){
+    if(path_index + board_array[path_index] >= board.size()-1)
+      break;
+
+    path_index = max_distance(path_index,board_array,size);
+    path.push_back(path_index);
+  }
+
+  path.push_back(size-1);
+
+  for (int i = 0; i < path.size(); ++i)
+  {
+    std::cout<<path[i]<<" ";  
+  }
+    std::cout<<"\n";
+
+  return 0;
 }

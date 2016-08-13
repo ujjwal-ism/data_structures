@@ -1,4 +1,4 @@
-/*#include "square.h"
+#include "square.h"
 #include "game.h"
 #include "player.h"
 #include "gameUtil.h"
@@ -25,11 +25,11 @@ int main(){
 
   GameUtil* util = new GameUtil();
 
-  int maxTravelDistance = util->compute(game_board.at(0), player1);
-  std::cout << "max distance: " << maxTravelDistance << std::endl;
+  //int maxTravelDistance = util->compute(game_board.at(0), player1);
+  //std::cout << "max distance: " << maxTravelDistance << std::endl;
 
-  int length = util->shortestPathDistance(game1, player1);
-  std::cout << "Length of shortest path: " << length << std::endl;
+  //int length = util->shortestPathDistance(game1, player1);
+  //std::cout << "Length of shortest path: " << length << std::endl;
 
   std::vector<int> path;
   path.push_back(0);
@@ -41,4 +41,4 @@ int main(){
   std::cout << "Example path is valid (0/1): " << valid << std::endl;
 
   return 0;
-}*/
+}

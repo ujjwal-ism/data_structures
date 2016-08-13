@@ -4,4 +4,6 @@
 
 Game::Game(std::vector<Square*> squares) : board(squares) {}
 
-const std::vector<Square*>& Game::getBoard() const { return board; }
+const std::vector<Square*>& Game::getBoard() const { 
+	return board; 
+}
