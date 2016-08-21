@@ -72,7 +72,7 @@ void sudo_test_part3(){
   std::srand(time(NULL));
 
   int rand_c_p,rand_t_e;
-  for (int i = 0; i < 100; ++i)
+  for (int i = 0; i < 1000; ++i)
   {
     rand_c_p = std::rand()%10;
     rand_t_e = std::rand()%10;
