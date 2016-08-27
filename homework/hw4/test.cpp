@@ -86,6 +86,19 @@ void sudo_test_part3(){
 }
  	
 
+int test_shortest_path() {
+    int [] board = [2,4,1,3];
+    
+    GameUtil *util = new GameUtil();
+    int shortest_path_distance = util->shortestPathDistance(board);
+
+    if(shortest_path_distance == 2) {
+        return 1;
+    }
+
+    return 0;
+}
+
 int main() {
 	if (test_part1()) {
 		cout << "Test 1 passed "<<endl;
@@ -99,5 +112,12 @@ int main() {
 	}else{
 		cout<<"Test 2 failed"<<endl;
 	}
-  sudo_test_part3();
+
+    if(test_shortest_path()) {
+        cout << "Test Shortest Path Passed";
+    }else {
+        cot << " Test Shotest Path Failed";
+    }
+    
+    //sudo_test_part3();
 }

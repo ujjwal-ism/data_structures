@@ -10,6 +10,7 @@ class GameUtil{
     int compute(Square*, Player*);
     bool isValidPath(std::vector<int>&, Player*, Game*);
     int shortestPathDistance(Game*, Player*);
+    int shortestPathDistance(int*, int);
     int max_distance(int,int*,int);
 
 };
